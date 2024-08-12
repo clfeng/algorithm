@@ -1,1 +1,1 @@
-import './sort/mergeSort';
+import './sort/quickSort/index';
