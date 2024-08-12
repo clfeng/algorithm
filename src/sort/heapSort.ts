@@ -1,4 +1,4 @@
-import { genTestArr, swap, validateSort } from "../utils";
+import { genRandomArr, swap, validateSort } from "../utils";
 
 function shiftDown(nums:number[], size: number, i: number) {
   while (true) {
@@ -32,4 +32,4 @@ function heapSort(nums: number[]) {
 
 
 }
-validateSort(genTestArr(10, 1, 100), heapSort);
+validateSort(genRandomArr(10, 1, 100), heapSort);

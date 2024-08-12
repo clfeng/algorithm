@@ -1,4 +1,4 @@
-import { genTestArr, isOrder, swap, validateSort} from '../utils';
+import { genRandomArr, isOrder, swap, validateSort} from '../utils';
 
 /*
 时间复杂度：O(n^2)
@@ -100,4 +100,4 @@ function selectionSort (nums: number[]) {
 }
 
 // validateSort([16,26,20,5,47,98,62,31,9,35], selectionSort);
-validateSort(genTestArr(10, 1, 100), selectionSort);
+validateSort(genRandomArr(10, 1, 100), selectionSort);

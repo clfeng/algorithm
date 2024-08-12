@@ -1,4 +1,4 @@
-import { genTestArr, swap, validateSort } from "../../utils";
+import { genRandomArr, swap, validateSort } from "../../utils";
 
 function _quickSort(nums: number[], left: number, right: number) {
   if (left >= right) {
@@ -31,4 +31,4 @@ function quickSort(nums: number[]) {
   return _quickSort(nums, 0, nums.length - 1)
 }
 
-validateSort(genTestArr(10, 1, 3), quickSort);
+validateSort(genRandomArr(10, 1, 3), quickSort);

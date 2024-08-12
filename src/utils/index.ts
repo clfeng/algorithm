@@ -2,10 +2,10 @@ export function swap (nums: number[], i: number, j: number) {
   [nums[i], nums[j]] = [nums[j], nums[i]];
 }
 
-export function genTestArr (len: number, min: number, max: number) {
+export function genRandomArr (len: number, min: number, max: number) {
   const arr = new Array(len);
   for (let i = 0; i < len; i++) {
-    arr[i] = min + Math.floor((max - min) * Math.random());
+    arr[i] = min + Math.floor((max - min + 1) * Math.random());
   }
   return arr;
 }

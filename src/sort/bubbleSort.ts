@@ -1,4 +1,4 @@
-import { genTestArr, swap, validateSort } from "../utils";
+import { genRandomArr, swap, validateSort } from "../utils";
 
 /* 
 冒泡排序
@@ -50,4 +50,4 @@ function bubbleSort(nums: number[]): void {
   }
 
 }
-validateSort(genTestArr(10, 1, 100), bubbleSort);
+validateSort(genRandomArr(10, 1, 100), bubbleSort);

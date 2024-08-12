@@ -1,4 +1,4 @@
-import { genTestArr, swap, validateSort } from "../utils";
+import { genRandomArr, swap, validateSort } from "../utils";
 
 /* 
 插入排序
@@ -51,5 +51,5 @@ function insertionSort(nums: number[]): void {
     nums[j - 1] = base;
   }
 }
-// validateSort(genTestArr(10, 1, 100), insertionSort);
+// validateSort(genRandomArr(10, 1, 100), insertionSort);
 validateSort([6,93,46,53,57,44,91,0,6,66], insertionSort);

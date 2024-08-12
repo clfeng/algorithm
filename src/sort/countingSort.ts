@@ -1,4 +1,4 @@
-import { genTestArr, validateSort } from "../utils";
+import { genRandomArr, validateSort } from "../utils";
 
 /* 计数排序 */
 function countingSort(nums: number[]): void {
@@ -30,4 +30,4 @@ function countingSort(nums: number[]): void {
   }
 }
 
-validateSort(genTestArr(20, 0, 6), countingSort);
+validateSort(genRandomArr(20, 0, 6), countingSort);

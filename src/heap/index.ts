@@ -1,8 +1,8 @@
-import { genTestArr, isOrder, OrderType } from "../utils";
+import { genRandomArr, isOrder, OrderType } from "../utils";
 import { MaxHeap } from "./heap";
 
 const heap = new MaxHeap();
-const nums = genTestArr(10, 1, 100);
+const nums = genRandomArr(10, 1, 100);
 nums.forEach(item => heap.push(item));
 
 const sortedNums: number[] = []

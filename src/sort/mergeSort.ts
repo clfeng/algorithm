@@ -1,4 +1,4 @@
-import { genTestArr, validateSort } from "../utils";
+import { genRandomArr, validateSort } from "../utils";
 
 
 function merge(nums: number[], left: number, mid: number, right: number) {
@@ -58,4 +58,4 @@ function mergeSort (nums: number[]) {
 }
 
 
-validateSort(genTestArr(10, 1, 100), mergeSort)
+validateSort(genRandomArr(10, 1, 100), mergeSort)

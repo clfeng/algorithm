@@ -1,4 +1,4 @@
-import { genTestArr, swap, validateSort } from "../../utils";
+import { genRandomArr, swap, validateSort } from "../../utils";
 
 function partition(nums: number[], left: number, right: number): number {
   swap(nums, left, left + Math.floor(Math.random() * (right - left + 1)));
@@ -41,4 +41,4 @@ function quickSort(nums: number[]) {
   return _quickSort(nums, 0, nums.length - 1)
 }
 
-validateSort(genTestArr(10, 1, 100), quickSort);
+validateSort(genRandomArr(10, 1, 100), quickSort);

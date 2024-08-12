@@ -1,4 +1,4 @@
-import { genTestArr, swap, validateSort } from "../../utils";
+import { genRandomArr, swap, validateSort } from "../../utils";
 
 
 // hello-algo 的 partition 思路
@@ -37,4 +37,4 @@ function _quickSort(nums: number[], left: number, right: number) {
 function quickSort(nums: number[]) {
   return _quickSort(nums, 0, nums.length - 1)
 }
-validateSort(genTestArr(10, 1, 100), quickSort)
+validateSort(genRandomArr(10, 1, 100), quickSort)
