@@ -1,1 +1,1 @@
-import './sort/quickSort/index';
+import './wordPattern';
