@@ -1,1 +1,1 @@
-import './wordPattern';
+import './maxPoints';
