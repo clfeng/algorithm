@@ -1,8 +1,8 @@
-export function swap (nums: number[], i: number, j: number) {
+export function swap(nums: number[], i: number, j: number) {
   [nums[i], nums[j]] = [nums[j], nums[i]];
 }
 
-export function genRandomArr (len: number, min: number, max: number) {
+export function genRandomArr(len: number, min: number, max: number) {
   const arr = new Array(len);
   for (let i = 0; i < len; i++) {
     arr[i] = min + Math.floor((max - min + 1) * Math.random());
@@ -10,7 +10,7 @@ export function genRandomArr (len: number, min: number, max: number) {
   return arr;
 }
 
-export function genFloatArr (len: number, min: number, max: number) {
+export function genFloatArr(len: number, min: number, max: number) {
   const arr = new Array(len);
   for (let i = 0; i < len; i++) {
     arr[i] = +(min + (max - min) * Math.random()).toFixed(2);
@@ -19,9 +19,9 @@ export function genFloatArr (len: number, min: number, max: number) {
 }
 export enum OrderType {
   positive = 'positive',
-  reverse  = 'reverse'
+  reverse = 'reverse'
 }
-export function isOrder (nums: number[], type: OrderType = OrderType.positive) {
+export function isOrder(nums: number[], type: OrderType = OrderType.positive) {
   console.log('check nums', nums);
   for (let i = 0; i < nums.length - 1; i++) {
     if (type === OrderType.positive) {
@@ -36,7 +36,7 @@ export function isOrder (nums: number[], type: OrderType = OrderType.positive) {
   }
 }
 
-export function validateSort (nums: number[], sortFunc: (nums: number[]) => void) {
+export function validateSort(nums: number[], sortFunc: (nums: number[]) => void) {
   console.log('validate function', sortFunc.name);
   console.log('origin nums', JSON.stringify(nums));
   const copyNums = JSON.parse(JSON.stringify(nums)) as typeof nums;
@@ -47,38 +47,38 @@ export function validateSort (nums: number[], sortFunc: (nums: number[]) => void
   const sortedNumsStr = JSON.stringify(nums);
   console.log('sorted nums', sortedNumsStr);
   if (sortedNumsStr !== targetNumsStr) {
-      throw new Error(`after sorted nums should be ${copyNums}, but get ${nums}`);
+    throw new Error(`after sorted nums should be ${copyNums}, but get ${nums}`);
   }
 }
 
 export class MinHeap {
   heaps: number[];
-  constructor (nums: number[]) {
+  constructor(nums: number[]) {
     this.heaps = [...nums];
     // 建堆操作
-    for(let i = this.parent(this.size() - 1); i >= 0; i--) {
+    for (let i = this.parent(this.size() - 1); i >= 0; i--) {
       this.shiftDown(i);
     }
   }
 
-  size () {
+  size() {
     return this.heaps.length;
   }
-  parent (i: number) {
+  parent(i: number) {
     return Math.floor((i - 1) / 2);
   }
-  left (i: number) {
+  left(i: number) {
     return i * 2 + 1;
-  } 
-  right (i: number) {
+  }
+  right(i: number) {
     return i * 2 + 2;
   }
   shiftDown(i: number) {
-    while(i < this.size()) {
+    while (i < this.size()) {
       const left = this.left(i);
       const right = this.right(i);
       let min = i;
-      if (left < this.size() && this.heaps[left] < this.heaps[min] ) {
+      if (left < this.size() && this.heaps[left] < this.heaps[min]) {
         min = left;
       }
 
@@ -95,7 +95,7 @@ export class MinHeap {
   }
 
   shiftUp(i: number) {
-    while(i > 0) {
+    while (i > 0) {
       const p = this.parent(i);
       if (this.heaps[i] < this.heaps[p]) {
         this.swap(this.heaps, i, p);
@@ -105,12 +105,12 @@ export class MinHeap {
       }
     }
   }
-  push (val: number) {
+  push(val: number) {
     this.heaps.push(val);
     this.shiftUp(this.size() - 1);
   }
 
-  pop () {
+  pop() {
     if (!this.size()) {
       return;
     }
@@ -120,10 +120,44 @@ export class MinHeap {
     return item;
   }
 
-  swap (nums: number[], i: number, j: number) {
+  swap(nums: number[], i: number, j: number) {
     [nums[i], nums[j]] = [nums[j], nums[i]];
   }
-  peek () {
+  peek() {
     return this.heaps[0];
   }
+}
+
+
+export class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
+  }
+}
+
+export function createList (arr: number[]) {
+  const head = new ListNode();
+  let cur = head;
+  for (const num of arr) {
+    const node = new ListNode(num);
+    cur.next = node;
+    cur = node;
+  }
+
+  const ret = head.next;
+  head.next = null;
+  return ret;
+}
+
+export function printList (head: ListNode | null) {
+  let ret = [];
+
+  while (head) {
+    ret.push(head.val);
+    head = head.next;
+  };
+  console.log(ret.join(' -> '));
 }
