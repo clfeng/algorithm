@@ -10,7 +10,7 @@
  * }
  */
 
-import { ListNode } from "./utils";
+import { ListNode } from "../utils";
 
 function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
     const dummyHead = new ListNode(-1)

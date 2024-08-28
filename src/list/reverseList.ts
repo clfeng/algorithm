@@ -1,4 +1,4 @@
-import { ListNode, createList, printList } from "./utils";
+import { ListNode, createList, printList } from "../utils";
 
 function reverseList(head: ListNode | null): ListNode | null {
   if (!head) {

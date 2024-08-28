@@ -1,4 +1,4 @@
-import { swap } from "./utils";
+import { swap } from "../utils";
 
 function removeDuplicates(nums: number[]): number {
     // [0, k) 为出现次数不超过两次的元素

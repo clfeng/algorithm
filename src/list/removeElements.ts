@@ -10,7 +10,7 @@
  * }
  */
 
-import { ListNode } from "./utils";
+import { ListNode } from "../utils";
 
 function removeElements(head: ListNode | null, val: number): ListNode | null {
   if (!head) {

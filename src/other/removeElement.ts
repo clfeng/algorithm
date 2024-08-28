@@ -1,4 +1,4 @@
-import { swap } from "./utils";
+import { swap } from "../utils";
 
 function removeElement(nums: number[], val: number): number {
     // [0, k）为 为非val值的部分

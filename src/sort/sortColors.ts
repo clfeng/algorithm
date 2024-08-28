@@ -1,4 +1,4 @@
-import { swap } from "./utils";
+import { swap } from "../utils";
 
 /**
  Do not return anything, modify nums in-place instead.

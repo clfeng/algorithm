@@ -2,7 +2,7 @@
 // 排序后，通过角标直接获取
 // 通过部分快排的方式实现
 
-import { MinHeap, swap } from "./utils";
+import { MinHeap, swap } from "../utils";
 
 // function findKthLargest(nums: number[], k: number): number {
 //     const minHeap = new MinHeap(nums.slice(0, k));

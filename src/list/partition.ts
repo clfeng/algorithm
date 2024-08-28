@@ -10,7 +10,7 @@
  * }
  */
 
-import { ListNode } from "./utils";
+import { ListNode } from "../utils";
 
 function partition(head: ListNode | null, x: number): ListNode | null {
     if (!head) {

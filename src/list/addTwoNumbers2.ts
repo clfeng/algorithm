@@ -1,4 +1,4 @@
-import { ListNode } from "./utils";
+import { ListNode } from "../utils";
 
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
   let stack1: ListNode[] = [];

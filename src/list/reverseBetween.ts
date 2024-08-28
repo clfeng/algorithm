@@ -10,7 +10,7 @@
  * }
  */
 
-import { createList, ListNode, printList } from "./utils";
+import { createList, ListNode, printList } from "../utils";
 
 function reverseBetween(head: ListNode | null, left: number, right: number): ListNode | null {
   if (!head) {

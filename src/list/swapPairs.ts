@@ -10,7 +10,7 @@
  * }
  */
 
-import { ListNode } from "./utils";
+import { ListNode } from "../utils";
 
 function swapPairs(head: ListNode | null): ListNode | null {
     if (!head) {

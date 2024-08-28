@@ -10,7 +10,7 @@
  * }
  */
 
-import { createList, ListNode, printList } from "./utils";
+import { createList, ListNode, printList } from "../utils";
 
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     let head = new ListNode(-1);
