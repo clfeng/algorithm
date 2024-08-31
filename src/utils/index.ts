@@ -138,7 +138,7 @@ export class ListNode {
   }
 }
 
-export function createList (arr: number[]) {
+export function createList(arr: number[]) {
   const head = new ListNode();
   let cur = head;
   for (const num of arr) {
@@ -152,7 +152,7 @@ export function createList (arr: number[]) {
   return ret;
 }
 
-export function printList (head: ListNode | null) {
+export function printList(head: ListNode | null) {
   let ret = [];
 
   while (head) {
@@ -160,4 +160,48 @@ export function printList (head: ListNode | null) {
     head = head.next;
   };
   console.log(ret.join(' -> '));
+}
+
+
+
+export class TreeNode {
+  val: number
+  left: TreeNode | null
+  right: TreeNode | null
+  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+    this.val = (val === undefined ? 0 : val)
+    this.left = (left === undefined ? null : left)
+    this.right = (right === undefined ? null : right)
+  }
+}
+
+
+export function createTree (arr: (number | null)[]) {
+  const rootItem = arr.shift();
+  if (!rootItem) {
+    return rootItem
+  }
+  const root = new TreeNode(rootItem);
+  const queue: TreeNode[] = [root];
+
+  while (arr.length) {
+    const node = queue.shift()!;
+    if (arr.length) {
+      let item = arr.shift();
+      if (item) {
+        node.left = new TreeNode(item);
+        queue.push(node.left);
+      }
+    }
+
+    if (arr.length) {
+      let item = arr.shift();
+      if (item) {
+        node.right = new TreeNode(item);
+        queue.push(node.right);
+      }
+      
+    }
+  }
+  return root;
 }
