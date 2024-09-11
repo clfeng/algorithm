@@ -176,10 +176,10 @@ export class TreeNode {
 }
 
 
-export function createTree (arr: (number | null)[]) {
+export function createTree (arr: (number | null)[]): TreeNode | null {
   const rootItem = arr.shift();
   if (!rootItem) {
-    return rootItem
+    return null
   }
   const root = new TreeNode(rootItem);
   const queue: TreeNode[] = [root];
