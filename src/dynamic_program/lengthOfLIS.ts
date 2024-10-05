@@ -1,24 +1,24 @@
-// function lengthOfLIS(nums: number[]): number {
-//   if (!nums.length) {
-//     return 0;
-//   }  
+function lengthOfLIS(nums: number[]): number {
+  if (!nums.length) {
+    return 0;
+  }  
 
-//   const memo = new Array(nums.length).fill(1);
+  const memo = new Array(nums.length).fill(1);
 
-//   for (let i = 1; i < nums.length; i++) {
-//     for (let j = 0; j < i; j++) {
-//       if (nums[j] < nums[i]) {
-//         memo[i] = Math.max(memo[i], memo[j] + 1)
-//       }
-//     }
-//   }
+  for (let i = 1; i < nums.length; i++) {
+    for (let j = 0; j < i; j++) {
+      if (nums[j] < nums[i]) {
+        memo[i] = Math.max(memo[i], memo[j] + 1)
+      }
+    }
+  }
 
-//   let max = 0;
-//   memo.forEach(item => {
-//     max = Math.max(item, max);
-//   })
-//   return max;
-// };
+  let max = 0;
+  memo.forEach(item => {
+    max = Math.max(item, max);
+  })
+  return max;
+};
 
 
 // 贪心算法 + 二分查找
@@ -70,7 +70,7 @@ function lengthOfLIS(nums: number[]): number {
       d.push(nums[i]);
     } else {
       // 更新d，使得上升更慢 
-      let l = 0, r = nums.length - 1, pos = -1;
+      let l = 0, r = d.length - 1, pos = -1;
 
       // 在d数组中找到比nums[i]小的最后元素进行替换
       while(l <= r) {
