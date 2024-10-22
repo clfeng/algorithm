@@ -51,8 +51,8 @@ function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: Tree
   }
 };
 
-const root = createTree([6,2,8,0,4,7,9,null,null,3,5]);
-const p = new TreeNode(2);
+const root = createTree([3,5,1,6,2,0,8,null,null,7,4]);
+const p = new TreeNode(5);
 const q = new TreeNode(4);
 
 console.log(lowestCommonAncestor(root, p, q));
