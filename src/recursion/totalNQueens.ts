@@ -1,4 +1,4 @@
-function solveNQueens(n: number): string[][] {
+function totalNQueens(n: number): number {
 
   const ret: string[][] = [];
   const rows: number[] = [];
@@ -9,7 +9,7 @@ function solveNQueens(n: number): string[][] {
 
   putQueue(0, rows);
 
-  return ret;
+  return ret.length;
 
 
   // 往第index行放入皇后
