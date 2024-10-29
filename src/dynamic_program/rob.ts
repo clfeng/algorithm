@@ -17,20 +17,20 @@
 //   return _rob(0);
 // };
 function rob(nums: number[]): number {
-  // 状态：考虑抢劫当前房子所能偷取的最大价值
-  // 状态转移方程：f(i) = Math.max(nums[i] + f(i + 2), f(i + 1))
+  // f(i): 偷取前i间房子的最高金额
+  // 状态转移方程：f(i) = Math.max(nums[i] + f(i - 2), f(i - 1))
+  if (nums.length <= 1) {
+    return nums[0];
+  }
 
   const len = nums.length;
   const memo = new Array(len).fill(0);
-  memo[len - 1] = nums[len - 1];
+  memo[0] = nums[0];
+  memo[1] = Math.max(nums[0], nums[1]);
 
-  for(let i = len - 2; i >= 0; i--) {
-    if (i + 2 < len) {
-      memo[i] = Math.max(nums[i] + memo[i + 2], memo[i + 1]);
-    } else {
-      memo[i] = Math.max(nums[i], memo[i + 1]);
-    }
+  for(let i = 2; i < len; i++) {
+    memo[i] = Math.max(nums[i] + memo[i - 2], memo[i - 1]);
   }
 
-  return memo[0]
+  return memo[len - 1];
 }
