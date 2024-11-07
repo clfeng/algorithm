@@ -1,1 +1,1 @@
-import './dynamic_program/rob_337.ts';
+import './dynamic_program/canPartition.ts';
